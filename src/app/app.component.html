@@ -1,0 +1,33 @@
+
+
+<div class="topnav offset-1" [hidden]="!show()">
+    <a href="home" routerLinkActive="active">Slatki zalogaji</a>
+    <div class="topnav-right">
+        <a href="cupcakes" [hidden]="is_admin()">
+            <img class="icon" src="../assets/icons/cupcake.png"></a>
+
+        <a href="all_products" [hidden]="!is_admin()">
+            <img class="icon" src="../assets/icons/cupcake.png"></a>
+
+        <a href="cakes" [hidden]="is_admin()">
+            <img class="icon" src="../assets/icons/cake.png"></a>
+
+        <a href="notifications">
+            <img class="icon" src="../assets/icons/notify.png"></a>
+
+        <a href="cart" [hidden]="is_admin()">
+            <img class="icon" src="../assets/icons/cart.png"></a>
+
+        <a href="orders" [hidden]="!is_admin()">
+            <img class="icon" src="../assets/icons/orders.png"></a>
+            
+        <a href="new_product" [hidden]="!is_admin()">
+            <img class="icon" src="../assets/icons/new_product.png"></a>
+
+        <a href="profile">
+            <img class="icon" src="../assets/icons/profile.png"></a>
+
+    </div>
+</div>
+
+<router-outlet />

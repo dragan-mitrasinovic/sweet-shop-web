@@ -1,0 +1,17 @@
+<div class="center offset-4 col-4 pad-top" >
+    <div class="card center">
+        <h1 class="title">Prijava</h1>
+        <br>
+        <h4 class="field-title">Korisničko ime</h4>
+        <input type="text" class="input-field" [(ngModel)]="username">
+        <br>
+        <h4 class="field-title">Lozinka</h4>
+        <input type="password" class="input-field" [(ngModel)]="password">
+        <br><br>
+        <button class="action-button" (click)="login()">Prijavi se</button>
+        <br>
+        <div class="error">
+            {{msg}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="col-10 offset-1 pad-top-with-nav">
+    <div class="card ">
+        <h1 class="description pretty-letters center">
+            Novi proizvod
+        </h1>
+        <hr>
+        <div class="row">
+            <div class="col-7">
+                <table [hidden]="product.type!='cake'">
+                    <tr *ngFor="let row of indexes">
+                        <td *ngFor="let i of row">
+                            <input type="radio"
+                                name="cakes" 
+                                [value]="url_prefix+'cake'+i+'.jpg'" 
+                                [(ngModel)]="product.image">
+                            <img [src]="url_prefix+'cake'+i+'.jpg'" 
+                            class="product-icon" style="margin-bottom: 10px;" 
+                            (click)="product.image=url_prefix+'cake'+i+'.jpg'">
+                        </td>
+                    </tr>
+                </table>
+                <table [hidden]="product.type!='cupcake'">
+                    <tr *ngFor="let row of indexes">
+                        <td *ngFor="let i of row">
+                            <input type="radio" 
+                                name="cupcakes" 
+                                [value]="url_prefix+'cupcake'+i+'.jpg'" 
+                                [(ngModel)]="product.image">
+                            <img [src]="url_prefix+'cupcake'+i+'.jpg'" 
+                            class="product-icon" style="margin-bottom: 10px;" 
+                            (click)="product.image=url_prefix+'cupcake'+i+'.jpg'">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-5 center description">
+                <h6 >Naziv</h6>
+                <input type="text" class="input-field" [(ngModel)]="product.name">
+                <br><br>
+                <h6 >Tip proizvoda</h6>
+                <h6 ><input type="radio" [(ngModel)]="product.type" name="product_type" value="cake" (change)="product.image=''">Cake<br></h6>
+                <h6 ><input type="radio" [(ngModel)]="product.type" name="product_type" value="cupcake" (change)="product.image=''">Cupcake</h6>
+                <br>
+                <h6>Opis</h6>
+                <input type="text" class="input-field" [(ngModel)]="product.desc">
+                <br><br>
+                <h6 >Sastojci</h6>
+                <input type="text" class="input-field" [(ngModel)]="product.ingredients">
+                <br><br>
+                <h6 >Cena</h6>
+                <input type="text" class="input-field" [(ngModel)]="product.price">
+                <br><br>
+                <button class="action-button approve-button" (click)="add_product()">
+                    Napravi proizvod
+                </button>
+                <div class="error">
+                    {{msg}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

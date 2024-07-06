@@ -1,0 +1,57 @@
+<div class="offset-1 col-10 pad-top-with-nav" *ngIf="cart.length>0">
+    <div class="card">
+        <div *ngFor="let item of cart">
+            <div class="row">
+                <div class="col-1">
+                    <img [src]="item.product.image" class="icon-big img">
+                </div>
+                <div class="col-7 description pretty-letters">
+                    {{item.product.name}}
+                </div>
+                <div class="col-2 description pretty-letters">
+                    Cena:
+                    {{item.product.price*item.count}}
+                </div>
+                <div class="col-2">
+                    <table>
+                        <tr class="center">
+                            <td>
+                                <img class="icon-small" src="../../assets/icons/plus.png" (click)="inc(item, 1)">
+                                <br>
+                                <img class="icon-small" src="../../assets/icons/minus.png" (click)="inc(item, -1)">
+                            </td>
+                            <td class="buy-cnt title">
+                                {{item.count}}
+                            </td>
+                            <td>
+                                <img class="icon-big" src="../../assets/icons/trash.png" (click)="delete(item)">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br><br><hr style="margin:10px; color: white">
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="offset-8 col-4">
+            <div class="total center">
+                <div class="description pretty-letters">Ukupna cena: {{total_sum}}</div>
+                <button class="action-button approve-button" (click)="make_order()">
+                    Make order
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <app-footer></app-footer>
+</div>
+
+<div class="offset-1 col-10" *ngIf="cart.length==0" style="margin-top: 50px">
+    <div class="description pretty-letters total center">
+        Vasa korpa je prazna
+
+    </div>
+    <app-footer></app-footer>
+</div>

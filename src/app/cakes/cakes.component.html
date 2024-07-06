@@ -1,0 +1,24 @@
+<div class="col-10 offset-1 pad-top-with-nav">
+    <div class="row">
+        <div class="col-1 vert-align">
+            <button class="button-nav" (click)="next_product(-3)" [hidden]="index==0">
+                <img src="../../assets/icons/arrow-left.png">
+            </button>
+        </div>
+        <div class="col-9">
+            <div class="center card fit" *ngFor="let i of display_indexes" (click)="go_to_product(products[i])">
+                <h5 class="prod-title pretty-letters" style="font-size: 45px !important;">
+                   {{products[i].name}} 
+                </h5>
+                <img [src]="products[i].image" class="product-img fit-img">
+            </div>
+        </div>
+        <div class="col-1 vert-align">
+            <button class="button-nav" (click)="next_product(3)" [hidden]="index+3>=products.length">
+                <img src="../../assets/icons/arrow-right.png">
+            </button>
+        </div>
+    </div>
+    <app-footer></app-footer>
+
+</div>

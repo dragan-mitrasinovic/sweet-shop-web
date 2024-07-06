@@ -1,0 +1,44 @@
+<div class="center offset-4 col-4 pad-top-with-nav" >
+    <div class="card center">
+        <h1 class="title">Profil</h1>
+        <br>
+        <h4 class="field-title">Ime</h4>
+        <input type="text" class="input-field" [(ngModel)]="user.name" [disabled]="!change_active">
+        <br>
+        <h4 class="field-title">Prezime</h4>
+        <input type="text" class="input-field" [(ngModel)]="user.surname" [disabled]="!change_active">
+        <br>
+        <h4 class="field-title">Adresa</h4>
+        <input type="text" class="input-field" [(ngModel)]="user.address" [disabled]="!change_active">
+        <br>
+        <h4 class="field-title">Telefon</h4>
+        <input type="text" class="input-field" [(ngModel)]="user.phone" [disabled]="!change_active">
+        <br>
+        <h4 class="field-title">Korisničko ime</h4>
+        <input type="text" class="input-field" [(ngModel)]="user.username" [disabled]="!change_active">
+        <br><br>
+
+        <div class="row" style="width: 80%;" [hidden]="change_active">
+            <div class="offset-1 col-4">
+                <a href="password_reset"> <button class="action-button approve-button">Izmeni lozinku</button></a>
+            </div>
+            <div class="offset-2 col-4">
+                <button class="action-button approve-button" (click)="activate_change()">Izmeni podatke</button>
+            </div>
+        </div>
+        <div class="row" style="width: 80%; padding-top: 20px;" [hidden]="change_active">
+            <div class="offset-3">
+                <button class="action-button decline-button" (click)="logout()">Izlogujte se</button>
+            </div>
+        </div>
+
+        <div class="row" style="width: 80%;" [hidden]="!change_active">
+            <div class="offset-1 col-4">
+                <button class="action-button decline-button" (click)="cancel_change()">Odustani</button>
+            </div>
+            <div class="offset-2 col-4">
+                <button class="action-button approve-button" (click)="finish_change()">Potvrdi</button>
+            </div>
+        </div>
+    </div>
+</div>

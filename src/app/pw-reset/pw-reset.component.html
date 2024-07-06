@@ -1,0 +1,27 @@
+<div class="center offset-4 col-4 pad-top-with-nav" >
+    <div class="card center">
+        <h1 class="title">Izmena lozinke</h1>
+        <br>
+        <h4 class="field-title">Stara lozinka</h4>
+        <input type="password" class="input-field" [(ngModel)]="old_pw">
+        <br>
+        <h4 class="field-title">Nova lozinka</h4>
+        <input type="password" class="input-field" [(ngModel)]="new_pw">
+        <br>
+        <h4 class="field-title">Potvrda nove lozinke</h4>
+        <input type="password" class="input-field" [(ngModel)]="new_pw_rep">
+        <br><br>
+        <div class="row">
+            <div class=" col-1">
+                <a href="profile"><button class="action-button decline-button">Odustani</button></a>
+            </div>
+            <div class="offset-5 col-1">
+                <button class="action-button approve-button" (click)="commit_change()">Potvrdi</button>
+            </div>
+        </div>
+        <br>
+        <div class="error">
+            {{msg}}
+        </div>
+    </div>
+</div>

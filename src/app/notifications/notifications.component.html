@@ -1,0 +1,24 @@
+<div class="col-10 offset-1 pad-top-with-nav">
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="card">
+                <div *ngFor="let not of nots" class="description">
+                    Obavestenje: {{not.text}}
+                    <div class="topnav-right">
+                        <button class="action-button approve-button" (click)="go_to_order(not)">
+                            Pogledaj porudžbinu
+                        </button>
+                        &nbsp; &nbsp; &nbsp;
+                        <button class="action-button approve-button" [disabled]="not.seen" [class.disabled-button]="not.seen" (click)="read(not)">
+                            Oznaci kao procitano
+                        </button>
+                    </div>
+                    <br><br>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer [hidden]="get_logged().admin"></app-footer>
+
+</div>

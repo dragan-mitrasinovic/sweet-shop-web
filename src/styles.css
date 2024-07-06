@@ -1,0 +1,267 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root{
+    --box-shadow: -3px 3px 5px 2px rgba(0, 0, 0, 0.116);
+    --linear-grad: linear-gradient(45deg, rgba(255, 255, 255, 0.226), rgba(79, 208, 137, 0.116), rgba(79, 208, 137, 0.233), rgba(136, 39, 108, 0.13), rgba(136, 39, 108, 0.288));
+    --white-t: rgba(255, 255, 255, 0.253);
+    --white-t2:rgba(255, 255, 255, 0.678);
+    --purple-t: rgba(136, 39, 108, 0.8);
+    --approve-t: #bbfecea9;
+    --decline-t: #f1c3d1b9;
+    --error-red: rgb(153, 33, 33);
+}
+
+@font-face {
+    font-family: "PuppiesPlay";
+    src: url("assets/fonts/PuppiesPlay/PuppiesPlay-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Merienda";
+    src: url("assets/fonts/Merienda/Merienda-VariableFont_wght.ttf");
+}
+
+/* Main styles */
+
+body{
+    background-image: url(assets/bg7.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card {
+    max-height: fit-content;
+    width: 100%;
+    padding: 40px;
+    background: var(--linear-grad);
+    color: var(--purple-t);
+    border: none;
+    border-radius: 30px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+}
+
+.total {
+    padding: 20px;
+    background: var(--linear-grad);
+    color: var(--purple-t);
+    border: none;
+    border-radius: 30px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+}
+
+.fit{
+    width: 30% !important;
+    display: inline-block;
+    margin: 1.5%;
+}
+
+.pad-top{
+    padding-top: 200px;
+}
+
+.pad-top-with-nav{
+    padding-top: 60px;
+}
+
+.center{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.error{
+    color: var(--error-red);
+    font-family: "Merienda";
+}
+
+.vert-align{
+    vertical-align: middle;
+    padding-top: 12%;
+}
+
+.pretty-letters{
+    font-family: "PuppiesPlay" !important;
+    font-size: 50px !important;
+}
+
+.right-float{
+    float: right !important;
+}
+
+hr {
+    color: white
+}
+
+/* Input styles */
+
+.input-field{
+    background-color: var(--white-t);
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+    width: 70%;
+    font-family: "Merienda";
+    color: var(--purple-t)
+}
+
+.input-field:active, .input-field:hover, .action-button:active {
+    background-color: var(--white-t2) !important;
+    font-family: "Merienda";
+}
+
+/* Button styles */
+
+.button-nav{
+    background:  var(--linear-grad);
+    box-shadow: var(--box-shadow);
+    width: 100px;
+    height: 100px;
+    border-radius: 30px;
+    padding-top: 5px;
+    border: none;
+}
+
+.action-button{
+    background-color: var(--white-t);
+    color: var(--purple-t) !important;
+    border: 0.3px solid rgba(255, 255, 255, 0.452);
+    border-radius: 4px;
+    font-size: smaller;
+    padding: 10px;
+    min-width: fit-content;
+    font-family: "Merienda";
+}
+
+.approve-button{
+    background-color: var(--approve-t) !important;
+}
+
+.decline-button{
+    background-color: var(--decline-t) !important;
+}
+
+.disabled-button, .disabled-button:active, .disabled-button:hover{
+    background-color: rgba(128, 128, 128, 0.438) !important;
+    color: white !important;
+}
+
+/* Image styles */
+
+.product-img{
+    height: 400px;
+    max-width: 400px;
+    border-radius: 30px;
+}
+
+.icon{
+    height: 50px;
+    width: 50px;
+}
+
+.icon-small{
+    height: 30px;
+    width: 30px;
+}
+
+.icon-big{
+    height: 80px;
+    width: 80px;
+    border-radius: 30px;
+}
+
+.product-icon {
+    height: 110px;
+    width: 110px;
+    border-radius: 30px;
+}
+
+.buy-cnt{
+    height: 80px;
+    width: 80px;
+    border-radius: 30px;
+    background-color: white;
+}
+
+.fit-img{
+    width: 280px !important;
+}
+
+/* Text styles */
+
+.title{
+    font-size: xx-large;
+    color: var(--purple-t) !important;
+    font-family: "Merienda";
+}
+
+.prod-title{
+    font-size: 70px;
+    color: white !important;
+    font-family: "PuppiesPlay";
+}
+
+.field-title{
+    font-size: smaller;
+    font-family: "Merienda";
+}
+
+.description{
+    font-size: 20px;
+    font-family: "Merienda";
+    color: white;
+}
+
+.comment{
+    font-size: 12px;
+    font-family: "Merienda";
+    color: white;
+}
+
+
+/* Navigation bar and footer styles */
+
+.topnav {
+    overflow: hidden;
+    width: 83%;
+    background-color: var(--white-t);
+    border-radius: 0px 0px 20px 20px;
+    padding: 5px;
+}
+
+.topnav a {
+    font-size: 50px;
+    font-family: "PuppiesPlay";
+    float: left;
+    color: var(--purple-t) !important;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+  color: var(--purple-t)
+}
+
+.topnav-right {
+  float: right;
+}
+
+.footer{
+    background-color: var(--white-t);
+    border-radius: 20px 20px 0 0;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    bottom:0;
+    max-width: 350px;
+    font-family: 'Merienda';
+    color: var(--purple-t)
+}
+
+.footer .icon{
+    background-color: rgba(173, 111, 173, 0.534);
+    padding: 5px;
+    border-radius: 10px;
+}

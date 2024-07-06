@@ -1,0 +1,31 @@
+<div class="offset-1 col-10 pad-top-with-nav">
+    <div class="card">
+        <div *ngFor="let item of order.items">
+            <div class="row">
+                <div class="col-1">
+                    <img [src]="item.product.image" class="icon-big img">
+                </div>
+                <div class="col-7 description pretty-letters">
+                    {{item.product.name}}
+                </div>
+                <div class="col-2 description pretty-letters">
+                    Kolicina:
+                    {{item.count}}
+                </div>
+                <div class="col-2 description pretty-letters">
+                    Cena:
+                    {{item.product.price*item.count}}
+                </div>
+                <br><br><hr style="margin:10px; color: white">
+            </div>
+        </div>
+        <br>
+        <div class="offset-8 col-4">
+            <div style="float: right">
+                <div class="description pretty-letters">Ukupna cena: {{total_sum}}</div>
+            </div>
+        </div>
+    </div>
+    
+    <app-footer></app-footer>
+</div>

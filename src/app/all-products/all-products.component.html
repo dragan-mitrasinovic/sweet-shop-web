@@ -1,0 +1,37 @@
+<div class="col-10 offset-1 pad-top-with-nav">
+    <div class="row">
+        <div class="offset-1 col-1 vert-align">
+            <button class="button-nav" (click)="next_product(-1)" [hidden]="index==0">
+                <img src="../../assets/icons/arrow-left.png">
+            </button>
+        </div>
+        <div class="col-8">
+            <div class="card" (click)="go_to_product(current_product)">
+                <div class="row pretty-letters center" >
+                    <h1 style="font-size: 60px !important; color: white">Svi proizvodi</h1><hr>
+                </div>
+                <div class="row">
+                    <div class="col-5 center">
+                        <img [src]="current_product.image" class="product-img">
+                    </div>
+                    <div class="offset-1 col-6 center">
+                        <h1 class="prod-title pretty-letters">
+                            {{current_product.name}}
+                        </h1>
+                        <br><br><br>
+                        <div class="description">
+                            {{current_product.desc}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-1 vert-align">
+            <button class="button-nav" (click)="next_product(1)" [hidden]="index==products.length-1">
+                <img src="../../assets/icons/arrow-right.png">
+            </button>
+        </div>
+    </div>
+
+</div>

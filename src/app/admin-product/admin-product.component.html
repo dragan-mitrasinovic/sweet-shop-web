@@ -1,0 +1,43 @@
+<div class="col-10 offset-1 pad-top-with-nav">
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="row">
+                    <div class="col-5 center">
+                        <img [src]="product.image" class="product-img">
+                    </div>
+                    <div class="offset-1 col-6">
+                        <h1 class="prod-title pretty-letters center">
+                            {{product.name}}
+                        </h1>
+                        <br>
+                        <div class="description center">
+                            Opis: {{product.desc}}
+                        </div>
+                        <br>
+                        <div class=" description center">
+                            Sastojci: {{product.ingredients}}
+                        </div>
+                        <br>
+                        <div class="pretty-letters description center">
+                            Cena: {{product.price}}
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <h1 class="pretty-letters prod-title center">
+                    Komentari
+                </h1>
+                <br>
+                <div *ngFor="let comment of product.comments" class="comment">
+                    {{comment.username}}: {{comment.text}}
+                    <hr>
+                </div>
+            </div>
+    </div>
+
+</div>

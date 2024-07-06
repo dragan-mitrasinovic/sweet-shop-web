@@ -1,0 +1,71 @@
+<div class="col-10 offset-1 pad-top-with-nav">
+    <div class="row">
+        <div class="offset-1 col-1 vert-align">
+            <button class="button-nav" (click)="next_order(-1)" [hidden]="index==0">
+                <img src="../../assets/icons/arrow-left.png">
+            </button>
+        </div>
+        <div class="col-8">
+            <div class="card">
+                <h1 class="prod-title pretty-letters center">Porudzbina</h1>
+                <hr>
+                <div class="row" *ngFor="let item of current_order.items">
+                    <div class="col-1">
+                        <img [src]="item.product.image" class="icon-big img">
+                    </div>
+                    <div class="col-5 description pretty-letters">
+                        {{item.product.name}}
+                    </div>
+                    <div class="offset-3 col-3 description pretty-letters">
+                        Kolicina:
+                        {{item.count}}
+                    </div>
+                    <br><br><hr style="margin:10px; color: white">
+                </div>
+                <div class="row description pretty-letters center">
+                    <div class="col-4">
+                        Korisnik:<br>
+                        Adresa:<br>
+                        Telefon:<br>
+                    </div>
+                    <div class="offset-4 col-4">
+                        {{user.username}}<br>
+                        {{user.address}}<br>
+                        {{user.phone}}<br>
+                    </div>
+                </div>
+                <hr>
+                <div class="row center" *ngIf="!current_order.processing">
+                    <div class="col-1 offset-1 description">
+                        <button class="action-button decline-button" (click)="process_order(false)">
+                            Odbij
+                        </button>
+                    </div>
+                    <div class="col-2 offset-1 description">
+
+                        <button class="action-button approve-button" (click)="process_order(true)">
+                            Prihvati
+                        </button>
+                    </div>
+                </div>
+                <div class="row center" *ngIf="current_order.processing">
+                    <div class="col-3 description">
+                        Porudzbina je u procesiranju
+                    </div>
+                    <div class="col-2 offset-1 description">
+                        <button class="action-button approve-button" (click)="finish_order()">
+                            Zavrsi
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1 vert-align">
+            <button class="button-nav" (click)="next_order(1)" [hidden]="index==orders.length-1">
+                <img src="../../assets/icons/arrow-right.png">
+            </button>
+        </div>
+    </div>
+    <!-- <app-footer></app-footer> -->
+
+</div>

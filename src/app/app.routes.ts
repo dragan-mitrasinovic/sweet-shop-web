@@ -1,0 +1,33 @@
+import { Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { CakesComponent } from './cakes/cakes.component';
+import { CartComponent } from './cart/cart.component';
+import { CupcakesComponent } from './cupcakes/cupcakes.component';
+import { HomeComponent } from './home/home.component';
+import { NewProductComponent } from './new-product/new-product.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { OrdersComponent } from './orders/orders.component';
+import { ProfileComponent } from './profile/profile.component';
+import { PwResetComponent } from './pw-reset/pw-reset.component';
+import { ProductComponent } from './product/product.component';
+import { OrderViewComponent } from './order-view/order-view.component';
+import { AdminProductComponent } from './admin-product/admin-product.component';
+import { AllProductsComponent } from './all-products/all-products.component';
+
+export const routes: Routes = [
+    { path: "", component: HomeComponent },
+    { path: "login", component: LoginComponent },
+    { path: "cakes", component: CakesComponent },
+    { path: "cart", component: CartComponent },
+    { path: "cupcakes", component: CupcakesComponent },
+    { path: "home", component: HomeComponent },
+    { path: "product", component: ProductComponent },
+    { path: "new_product", component: NewProductComponent },
+    { path: "notifications", component: NotificationsComponent },
+    { path: "orders", component: OrdersComponent },
+    { path: "profile", component: ProfileComponent },
+    { path: "password_reset", component: PwResetComponent },
+    { path: "order_view", component: OrderViewComponent },
+    { path: "product_view", component: AdminProductComponent },
+    { path: "all_products", component: AllProductsComponent }
+];
